@@ -10,6 +10,7 @@ interface IProjectCard {
   thumbnail: string | StaticImageData;
   githubLink: string;
   demoLink?: string;
+  liveLink: string;
 }
 
 export default function ProjectCard({
@@ -17,7 +18,7 @@ export default function ProjectCard({
   description,
   thumbnail,
   githubLink,
-  demoLink,
+  liveLink,
 }: IProjectCard) {
   return (
     <CardContainer className="inter-var">
@@ -48,7 +49,8 @@ export default function ProjectCard({
           <CardItem
             translateZ={20}
             as={Link}
-            href="#"
+            href={liveLink}
+            target="_blank"
             className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
           >
             Try now →
